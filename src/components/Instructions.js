@@ -36,7 +36,7 @@ const Instructions = () => {
         </p>
         <ul>
           <li>A. useRef</li>
-          <li>B. Contolled component</li>
+          <li>B. Controlled component</li>
           <li>C. Data validation</li>
           <li>C. Input validation</li>
         </ul>
@@ -66,14 +66,6 @@ const Instructions = () => {
           <li>A. Class</li>
           <li>B. Props</li>
           <li>C. VirtualDOM</li>
-        </ul>
-        {/* write your answer here =>     A     */}
-      </div>
-      <div className="question">
-        <p>Nested components are also called child components</p>
-        <ul>
-          <li>A. True</li>
-          <li>B. False</li>
         </ul>
         {/* write your answer here =>     A     */}
       </div>
