@@ -21,18 +21,18 @@ const Comments = () => {
 
   return (
     <div>
-      {commentsData.map((comment) => (
-        <ul>
+      <ul>
+        {commentsData.map((comment) => (
           <li
             key={comment.id}
             id={comment.id}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", paddingBottom: "10px" }}
             onClick={clickHandler}
           >
-            <i>{comment.body}</i>
+            {comment.body}
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </div>
   );
 };
