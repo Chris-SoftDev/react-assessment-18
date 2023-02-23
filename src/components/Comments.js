@@ -1,16 +1,40 @@
+import React, { useState, useEffect } from "react";
+
 const Comments = () => {
-    // Insturction:
-    // Use endpoint: https://jsonplaceholder.typicode.com/comments to get a list of comments. 
-    // display the comment body on the screen
-    // add event listeners to each comment body that when clicked will simply console.log the comment id.
+  const [commentsData, setCommentsData] = useState([]);
 
-    // you will need to use the useEffect hook. Do this in async / await syntax.
+  const clickHandler = (e) => {
+    console.log(e.target.id);
+  };
 
+  useEffect(() => {
+    const fetchComments = async () => {
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/comments`
+      );
+      const data = await response.json();
+      setCommentsData(data);
+    };
 
-    return(
-        // Replace this with your code.
-        <h1>Comments component</h1>
-    )
-}
+    fetchComments();
+  }, []);
 
-export default Comments
+  return (
+    <div>
+      {commentsData.map((comment) => (
+        <ul>
+          <li
+            key={comment.id}
+            id={comment.id}
+            style={{ cursor: "pointer" }}
+            onClick={clickHandler}
+          >
+            <i>{comment.body}</i>
+          </li>
+        </ul>
+      ))}
+    </div>
+  );
+};
+
+export default Comments;
